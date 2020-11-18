@@ -1,0 +1,11 @@
+<mat-grid-list cols="3">
+    <mat-grid-tile>
+        <spa-score name="A" (onScore)="openSnackBar($event.message,'')" [scoreBlock]="gameOverBoolean"></spa-score>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <spa-timer (gameOver)="gameOverSnackBar($event,'Dismiss')"></spa-timer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <spa-score name="B" (onScore)="openSnackBar($event.message,'')"  [scoreBlock]="gameOverBoolean"></spa-score>
+    </mat-grid-tile>
+  </mat-grid-list>
