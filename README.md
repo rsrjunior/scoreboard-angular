@@ -4,4 +4,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Its a 60 seconds game that displays a scoreboard results for the shoots of two players
 
+## Play the Game
+https://rsrjunior.github.io/scoreboard-angular/
 
