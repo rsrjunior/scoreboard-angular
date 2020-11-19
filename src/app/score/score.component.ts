@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'spa-score',
@@ -21,7 +21,7 @@ export class ScoreComponent implements OnInit {
         this.score+=2;
         this.onScore.emit({message:`${this.name} Has Scored 2 Points`});
       }else{
-        this.onScore.emit({message:`${this.name} Fail`});
+        this.onScore.emit({message:`${this.name} Missed`});
       }        
     }
     
@@ -31,6 +31,13 @@ export class ScoreComponent implements OnInit {
   @Input() scoreBlock:boolean =false;
   @Input() name: string = "";
   @Output() onScore = new EventEmitter();
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    if(event.key.toUpperCase()==this.name){
+      this.scoreOne();
+    }
+  }
   
 
 }
